@@ -27,12 +27,14 @@ public class b10814 {
             if(s1[0].equals(s2[0])){
                 return 0; // 그대로
             }else{
-                return Integer.parseInt(s1[0])-Integer.parseInt(s2[0]); // s1[0].compareTo(s2[0]); 이 안되는 이유? - 미해결
+                return Integer.parseInt(s1[0])-Integer.parseInt(s2[0]);
                 /*
-                일단..
-                1이 리턴되면 두 객체의 자리가 바뀌며, 0이나 -1일 경우엔 바뀌지 않는다.
-                '현재 객체의 값 > 인자로 들어온 객체의 값' 일 때 1을 리턴시키면 오름차순 정렬이 되며, -1을 리턴시키면 내림차순 정렬이 된다.
+                s1[0].compareTo(s2[0]); 이 안되는 이유?
+                *1이 리턴되면 두 객체의 자리가 바뀌며(오름차순 정렬), 0이나 -1일 경우엔 바뀌지 않는다.*
 
+                * 예) String "10" 과 String "3" 비교
+                Integer.parseInt 로 String->int 변환시, 3, 10 오름차순 정렬이된다.
+                하지만 String의 compareTo 사용 시, "10"의 첫번째 "1" 과 "3" 이 비교된다. 따라서 10, 3 으로 정렬된다.
 
                  */
             }
