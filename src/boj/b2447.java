@@ -32,14 +32,24 @@ public class b2447 {
     }
 
     private static void print_star(int N, int I, int J){ // N = 3^k
+//        if(N==1) {
+//                board[I][J] = '*';
+//        }else {
+//            for (int i = 0; i < 3; i++) {
+//                for (int j = 0; j < 3; j++) {
+//                    if( !(i==1 && j ==1) )
+//                        print_star(N / 3, N / 3 * i + I, N / 3 * j + J);
+//                }
+//            }
+//        }
         if(N==1) {
-                board[I][J] = '*';
-        }else {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if( !(i==1 && j ==1) )
-                        print_star(N / 3, N / 3 * i + I, N / 3 * j + J);
-                }
+            board[I][J] = '*';
+            return;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if( !(i==1 && j ==1) )
+                    print_star(N / 3, N / 3 * i + I, N / 3 * j + J);
             }
         }
     }
