@@ -24,7 +24,7 @@ public class b11729 {
             sb.append(from).append(' ').append(to).append("\n");
             return;
         }
-        // A -> C
+        // A -> B
         hanoi(N-1, from, to, via);
         // 가장 밑 원판
         sb.append(from).append(' ').append(to).append("\n");
