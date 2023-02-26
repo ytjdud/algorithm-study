@@ -20,9 +20,9 @@ public class b1654 {
             LANs[i] = Integer.parseInt(br.readLine());
             if (max < LANs[i]) max = LANs[i];
         }
-        max++;
+        max++; // (G) upper bound 이므로 최대보다+1
 
-        long min =0, mid;
+        long min =0, mid; // K ≦ N 이므로 min 은 0부터 시작
         while(min<max){
             mid = (min+max)/2;
 
