@@ -8,21 +8,21 @@ import java.util.StringTokenizer;
 public class b15649 {
     static boolean[] visited;
     static int[] arr;
+    static int N,M;
     static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        // 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
 
         visited = new boolean[N];
         arr = new int[M];// {1,3} 담고 출력, {1,4} 담고 출력 이럴거
-        dfs(N,M,0);
+        dfs(0);
         System.out.println(sb);
     }
 
-    private static void dfs(int N, int M, int depth) {
+    private static void dfs(int depth) {
         if(depth == M){
             for(int i:arr){
                 sb.append(i).append(' ');
@@ -32,10 +32,10 @@ public class b15649 {
         }
 
         for(int i=0;i<N;i++){
-            if(!visited[i]){
+            if(!visited[i]){ // false 면,
                 visited[i] = true;
                 arr[depth] = i+1;
-                dfs(N,M,depth+1);
+                dfs(depth+1);
                 visited[i] = false;
             }
         }
