@@ -48,13 +48,13 @@ public class b24060 {
         int j = q + 1;
         int t = 0;
 
-        while (i <= q && j <= r) {
+        while (i <= q && j <= r) { // p<=q && q+1<=r, p++,(q+1)++
             if (A[i] <= A[j])
                 tmp[t++] = A[i++]; // tmp[t] <- A[i]; t++; i++;
             else
                 tmp[t++] = A[j++]; // tmp[t] <- A[j]; t++; j++;
         }
-        while (i <= q)  // 왼쪽 배열 부분이 남은 경우
+        while (i <= q)  // 왼쪽 배열 부분이 남은 경우 이부분 이해안됨
             tmp[t++] = A[i++];
         while (j <= r)  // 오른쪽 배열 부분이 남은 경우
             tmp[t++] = A[j++];
